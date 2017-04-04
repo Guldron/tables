@@ -1,0 +1,59 @@
+<table border="1px solid black" style="border-collapse: collapse">
+        <thead>
+        <tr>
+                <td>Час</td>
+                <td>Время</td>
+                <td>Вид поста ФБ</td>
+                <td>Вид материала</td>
+                <td>Вертикаль</td>
+                <td>Ссылка</td>
+                <td>Заголовок</td>
+                <td>Автор</td>
+                <td>Статус</td>
+                <td></td>
+        </tr>
+        </thead>
+</table>
+
+<table ng-repeat="(k,v) in dayTime " border="1px solid black" style="border-collapse: collapse">
+        <tr>
+                <td>{{::k + ':00'}}</td>
+                <td>
+                        <table>
+                                <tr ng-repeat="r in v">
+                                        <td>{{::r.time}}</td>
+                                        <td>
+                                                <table ng-repeat="b in r.posts">
+                                                        <tr>
+                                                                <td>{{::b.post_type}}</td>
+                                                                <td>{{::b.material_type}}</td>
+                                                                <td>{{::b.vertical}}</td>
+                                                                <td>
+                                                                        <a ng-href={{::b.material_link}}>link</a>
+                                                                </td>
+                                                                <td>title</td>
+                                                                <td>{{::b.author_name}}</td>
+                                                                <td>{{::b.status}}</td>
+                                                        </tr>
+                                                </table>
+                                        </td>
+                                </tr>
+                        </table>
+
+                </td>
+        </tr>
+
+
+        <tr>
+                <td>Итого за час</td>
+                <td>
+                        links: {{::getLinksPerHour(k)}}
+                        carts: {{::getCartsPerHour(k)}}
+                        reposts {{::getRepostsPerHour(k)}}
+                </td>
+        </tr>
+
+</table>
+
+
+

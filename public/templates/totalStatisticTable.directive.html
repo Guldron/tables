@@ -1,0 +1,20 @@
+<div clsss="table">
+        <div class="row">
+                <div class="cell">Итого за сутки: {{::totalLinks}}</div>
+                <div class="cell">Link:{{::totalLinks}} </div>
+                <div class="cell">
+                        repost: {{::reposts}}/({{::reportsPercent}}%)
+                        cart: {{::carts}}/({{::cartsPercent}}%)
+                </div>
+        </div>
+
+
+        <div class="row">
+                <div class="cell">Итого по вертикалям</div>
+                <div class="cell"></div>
+                <div class="cell">
+                        <p ng-repeat="(key, value) in verticals">{{::key + ':'}} {{::value}}</p>
+                </div>
+        </div>
+
+</div>
